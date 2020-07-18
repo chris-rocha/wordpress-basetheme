@@ -1,6 +1,6 @@
 // eslint-disable-next-line no-unused-vars
 import gdpr from "./gdpr.js";
-
+var Drupal = {};
 (function ($, Drupal) {
   $.fn.extend({
     toggleText: function(a, b){
@@ -63,41 +63,41 @@ import gdpr from "./gdpr.js";
 //   },
 // };
 
-  Drupal.behaviors.collierFacets = {
-    attach: function (context, settings) {
-      "use strict";
+  // Drupal.behaviors.collierFacets = {
+  //   attach: function (context, settings) {
+  //     "use strict";
 
-      $('.facets-widget-checkbox button').once().on('click', function () {
-        var $this = $(this);
-        // $others = $('.facets-widget-checkbox button').not($this);
-        $this.parent().toggleClass('open');
-        // $others.parent().removeClass('open')
-      });
+  //     $('.facets-widget-checkbox button').once().on('click', function () {
+  //       var $this = $(this);
+  //       // $others = $('.facets-widget-checkbox button').not($this);
+  //       $this.parent().toggleClass('open');
+  //       // $others.parent().removeClass('open')
+  //     });
 
-      $(document)
-        .once()
-        .on("keypress", function(e) {
-          if (
-            e.target.classList.contains("facets-checkbox") &&
-            e.keyCode === 13
-          ) {
-            document.getElementById(e.target.id).click();
-          }
-      });
+  //     $(document)
+  //       .once()
+  //       .on("keypress", function(e) {
+  //         if (
+  //           e.target.classList.contains("facets-checkbox") &&
+  //           e.keyCode === 13
+  //         ) {
+  //           document.getElementById(e.target.id).click();
+  //         }
+  //     });
 
-      $('.view-property-profiles .view-content aside.filter-bar').once().append('<a href="' + drupalSettings.path.baseUrl +  drupalSettings.path.currentPath + '" class="button reset">Reset</a>');
-    }
-  };
+  //     $('.view-property-profiles .view-content aside.filter-bar').once().append('<a href="' + drupalSettings.path.baseUrl +  drupalSettings.path.currentPath + '" class="button reset">Reset</a>');
+  //   }
+  // };
 
-  Drupal.behaviors.dropdownUI = {
-    attach: function(context, settings) {
-      $('.facets-widget-checkbox',context).each(function(){
-        $dropdown = $(this);
-        if($dropdown.find('.facet-item input[type=checkbox]:checked').length > 0) {
-          $dropdown.addClass('open');
-        }
-      });
-    }
-  }
+  // Drupal.behaviors.dropdownUI = {
+  //   attach: function(context, settings) {
+  //     $('.facets-widget-checkbox',context).each(function(){
+  //       $dropdown = $(this);
+  //       if($dropdown.find('.facet-item input[type=checkbox]:checked').length > 0) {
+  //         $dropdown.addClass('open');
+  //       }
+  //     });
+  //   }
+  // }
 
 })(jQuery, Drupal);

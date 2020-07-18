@@ -1295,7 +1295,7 @@ header#header #collier-search-form .form-item, header#header #collier-search-for
 
 header#header #collier-search-form input { margin: 0; -webkit-box-shadow: none; box-shadow: none; }
 
-header#header #collier-search-form input[type="text"] { width: 180px; background-color: transparent; border: none; color: white; }
+header#header #collier-search-form input[type="text"] { font-size: 20px; width: 180px; background-color: transparent; border: none; color: white; }
 
 header#header #collier-search-form input[type="text"]::-webkit-input-placeholder { color: white; }
 
@@ -1813,3 +1813,7 @@ article.node.search-result figure { -webkit-box-ordinal-group: 3; -moz-box-ordin
 @media screen and (max-width: 1024px) { article.node.search-result { display: block; }
   article.node.search-result img { margin: 0 auto 20px; }
   article.node.search-result figure { margin: 0; } }
+
+.wp-block-image img { height: auto; display: block; }
+
+.visually-hidden, .screen-reader-text { position: absolute !important; overflow: hidden; clip: rect(1px, 1px, 1px, 1px); width: 1px; height: 1px; word-wrap: normal; }
