@@ -2,7 +2,7 @@ header#header {
   background-color: $dark-blue;
   position: relative;
   z-index: 3;
-  margin-bottom: $fontSize;
+  // margin-bottom: $fontSize;
 
   body.path-frontpage & {
     margin-bottom: 0;
@@ -134,6 +134,7 @@ header#header {
         justify-content: space-between;
         align-items: flex-end;
 
+        .menu-item-has-children, // wp equiv.
         .menu-item--expanded {
 
           .child {
