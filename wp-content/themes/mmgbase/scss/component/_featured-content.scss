@@ -1,0 +1,100 @@
+$article-gap: 10px; //the whitespacing inbetween the articles
+.component.featured-content {
+  .css-grid-3 {
+    grid-column-gap: $article-gap;
+    grid-row-gap: $article-gap;
+    @media (max-width: $tabletWidth - 1) {
+      display: block;
+    }
+    article {
+      &:nth-of-type(1),
+      &:nth-of-type(4),
+      &:nth-of-type(5),
+      &:nth-of-type(8) {
+        grid-column-end: span 1;
+      }
+      &:nth-of-type(2),
+      &:nth-of-type(3),
+      &:nth-of-type(6),
+      &:nth-of-type(7) {
+        grid-column-end: span 2;
+      }
+      &:nth-of-type(odd) {
+        grid-column-start: 1;
+      }
+      &:nth-of-type(2),
+      &:nth-of-type(6) {
+        grid-column-start: 2;
+      }
+      &:nth-of-type(4),
+      &:nth-of-type(8) {
+        grid-column-start: 3;
+      }
+      &:nth-of-type(1),
+      &:nth-of-type(2) {
+        grid-row-start: 1;
+        grid-row-end: span 1;
+      }
+      &:nth-of-type(3),
+      &:nth-of-type(4) {
+        grid-row-start: 2;
+        grid-row-end: span 1;
+      }
+      &:nth-of-type(5),
+      &:nth-of-type(6) {
+        grid-row-start: 3;
+        grid-row-end: span 1;
+      }
+      &:nth-of-type(7),
+      &:nth-of-type(8) {
+        grid-row-start: 4;
+        grid-row-end: span 1;
+      }
+      &:last-child {// if theres only one article left, span the whole row
+        &:nth-of-type(odd) {
+          grid-column-start: 1;
+          grid-column-end: span 3;
+        }
+      }
+    }
+  }
+}
+article.featured-content {
+  height: 280px;
+  @media (max-width: $tabletWidth - 1) {
+    @include set-max-width(100%);
+    margin-bottom: $article-gap;
+    width: 420px;
+  }
+  a {
+    .content {
+      position: relative;
+      height: auto;
+      min-height: 0;
+      transition: all 300ms ease;
+      h4,
+      button {
+        position: relative;
+        z-index: 1;
+      }
+    }
+    button {
+      transition: all 0ms ease 0ms;
+      opacity: 0;
+      max-height: 0;
+    }
+    &:hover,
+    &:active,
+    &:focus {
+      button {
+        transition: all 300ms ease 300ms;
+        opacity: 1;
+        max-height: 100vh;
+      }
+      .content {
+        min-height: 100%;
+        background-color: rgba(16, 79, 99, 0.6);
+      }
+    }
+  }
+}

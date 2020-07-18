@@ -1,0 +1,61 @@
+.flexbox-promo {
+  .container {
+    display: grid;
+    grid-gap: 10px;
+    grid-template: repeat(2, auto) / auto;
+    @media screen and (min-width: $tabletWidth) {
+      grid-template: auto / repeat(2, 1fr);
+    }
+    .custom-promo {
+      padding: 10px;
+      height: 240px;
+      text-decoration: none;
+      display: flex;
+      flex-direction: row;
+      &:before {
+        top: 0;
+      }
+
+      h3 {
+        font-family: $fontFamily;
+        font-weight: 700;
+        line-height: 1.15;
+      }
+
+      svg {
+        width: 100px;
+        height: 100px;
+        min-width: 100px;
+        min-height: 100px;
+        margin: 0 10px 0 20px;
+        align-self: center;
+        .cls-1 {fill: $light-green;}
+        .cls-2 {fill: white;}
+        @media screen and (max-width: $mobileLandscapeWidth) {
+          width: 70px;
+          height: 70px;
+          min-width: 70px;
+          min-height: 70px;
+        }
+      }
+      .text-wrapper {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: flex-start;
+        margin: 0 20px 0 0;
+      }
+      .button-wrapper {
+        height: 0;
+        opacity: 0;
+        transition: all 250ms ease-in-out;
+      }
+      &:hover, &:focus, &:active {
+        .button-wrapper {
+          height: 1em;
+          opacity: 1;
+        }
+      }
+    }
+  }
+}

@@ -5,3 +5,27 @@ Version: 1.0
 Requires at least: 4.7
 Requires PHP: 5.2.4
 */
+@import "scss/fonts";
+@import "scss/base";
+@import "scss/colors";
+@import "scss/layout";
+@import "scss/animations";
+@import "scss/lightbox";
+@import "scss/icons";
+@import "scss/styleguide";
+@import "scss/block/header";
+@import "scss/block/footer";
+@import "scss/block/map-svg";
+@import "scss/node/landing";
+@import "scss/node/profile";
+@import "scss/node/news";
+@import "scss/node/info";
+@import "scss/component/flexbox-promo";
+@import "scss/component/featured-content";
+@import "scss/component/carousel";
+@import "scss/component/downloads-links";
+@import "scss/component/single-promo";
+@import "scss/component/announcement";
+@import "scss/component/list-drawer";
+@import "scss/facets";
+@import "scss/search";

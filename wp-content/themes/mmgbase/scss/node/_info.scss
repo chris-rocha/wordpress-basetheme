@@ -1,0 +1,15 @@
+article.node-info {
+  &.full {
+    h1 {
+      text-align: center;
+    }
+    .intro {
+      color: $dark-blue;
+      text-align: center;
+      text-transform: uppercase;
+    }
+    figure.rectangle-wide {
+      margin-bottom: $fontSize;
+    }
+  }
+}

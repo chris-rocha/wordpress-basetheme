@@ -1,0 +1,65 @@
+.component.single-promo {
+  position: relative;
+
+  &.bg-image {
+    &:after {
+      content: "";
+      position: absolute;
+      z-index: 1;
+      background-color: rgba($dark-blue, 0.7);
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+    }
+  }
+
+  .container {
+    position: relative;
+    z-index: 2;
+  }
+  a.cta-link {
+    height: 300px;
+    @media(max-width: $tabletWidth) {
+      height: auto;
+    }
+
+    h3 {
+      font-family: $fontFamily;
+      font-size: 40px;
+      font-weight: 700;
+      line-height: 1.15;
+      @media(max-width: $fontSizeChange) {
+        font-size: 28px;
+      }
+    }
+    .button-wrapper {
+      height: 0;
+      opacity: 0;
+      transition: all 250ms ease-in-out;
+      @media (max-width: $tabletWidth) {
+        &.show-on-mobile {
+          // Button style "a.button" should always display at BP of 768px and smaller when background image is present
+          // Button style "a.button.outlined" should always display at BP of 768px and smaller when background image is NOT present
+          height: auto; //1em;
+          opacity: 1;
+        }
+      }
+    }
+    &:hover,
+    &:focus,
+    &:active {
+      .button-wrapper {
+        height: 1em;
+        opacity: 1;
+        @media (max-width: $tabletWidth) {
+          height: auto;
+        }
+      }
+    }
+    &:focus,
+    &:active {
+      outline-color: white;
+    }
+  }
+}

@@ -1,0 +1,52 @@
+.paragraph.list-item {
+  border: 1px solid $fontColor;
+  margin-bottom: $fontSize;
+  padding: 0 $fontSize;
+  header {
+    min-height: 67px;
+    padding: $fontSize 0;
+    img {
+      height: auto;
+      width: 100px;
+      margin-right: $fontSize;
+      @media screen and (max-width: $fontSizeChange) {
+        display: none;
+      }
+    }
+    .heading6 {
+      flex-grow: 1;
+      text-align: left;
+      color: $gulf-blue;
+    }
+    .material-icons {
+      transition: transform 125ms ease-in-out;
+      font-size: $fontSize * 2;
+      color: $gulf-blue;
+    }
+    button {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      // padding-left: 2em;
+      &.open {
+        .material-icons {
+          transform: rotate(90deg);
+        }
+      }
+    }
+  }
+  .main {
+    height: 0;
+    overflow: hidden;
+//    padding-left: 100 + $fontSize;
+    .button {
+      margin-bottom: $fontSize;
+    }
+    &.open {
+      height: auto;
+      overflow: visible;
+    }
+  }
+}

@@ -5,6 +5,8 @@
 *.bak
 *.swp
 Thumbs.db
+.vscode
+node_modules
 
 # wordpress specific
 wp-config.php

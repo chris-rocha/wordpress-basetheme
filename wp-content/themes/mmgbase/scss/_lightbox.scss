@@ -1,0 +1,123 @@
+$lightboxOverlay: rgba(black, 0.7);
+$lightboxTransition: all 300ms ease;
+$max-img-width: 760px;
+$arrow-bp: $max-img-width + 100;
+body.freeze {
+  overflow: hidden;
+}
+.lightbox-backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: $lightboxOverlay;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 600;
+  overflow-y: auto;
+  .lightbox-content {
+    width: $max-img-width;
+    max-height: 100%;
+    overflow-x: visible;
+    .image-gallery & {
+      max-height: $max-img-width;
+    }
+    max-width: 100%;
+    z-index: 100;
+    figure,
+    img {
+      max-width: 100%;
+      max-height: 100%;
+    }
+    img {
+      height: auto;
+      width: auto;
+    }
+  }
+  .lightbox-header {
+    z-index: 2;
+    @media screen and (max-width: $desktopWidth) {
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+  }
+  .lightbox-body {
+    .container {
+      position: relative;
+    }
+    position: relative;
+    z-index: 1;
+    .container {
+      position: relative;
+    }
+  }
+  .lightbox-close {
+    top: 20px;
+    right: 20px;
+    position: fixed;
+    z-index: 2;
+    i {
+      font-size: 2.5em;
+      @media (max-width: $mobileLandscapeWidth - 1) {
+        font-size: 1.5em;
+      }
+    }
+  }
+
+  button.prev,
+  button.next {
+    border-radius: 10%;
+    font-size: 2.5em;
+    position: fixed;
+    transform: translateY(-50%);
+    top: calc(50% - 15px);
+    //15px is to accomdate for the height of nav-dots below content
+    background-color: rgba($gulf-blue, 0.5);
+    &:hover,
+    &:active {
+      background-color: rgba($gulf-blue, 0.75);
+    }
+    @media (max-width: $arrow-bp - 1) {
+      position: absolute;
+      font-size: 2em;
+    }
+    @media (max-width: $mobileLandscapeWidth - 1) {
+      font-size: 1.5em;
+    }
+  }
+  button.prev {
+    left: 30px;
+    @media (max-width: $arrow-bp - 1) {
+      left: 10px;
+    }
+  }
+  button.next {
+    right: 30px;
+    @media (max-width: $arrow-bp - 1) {
+      right: 10px;
+    }
+  }
+}
+button.dot {
+  @include marding(0 0.5em 0, 0);
+  display: block;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #e8f6f666;
+  &.active {
+    background-color: $gulf-blue;
+  }
+}
+.lightbox-fade-enter,
+.lightbox-fade-leave-active {
+  opacity: 0;
+}
+.lightbox-fade-enter-active,
+.lightbox-fade-leave-active {
+  transition: $lightboxTransition;
+}

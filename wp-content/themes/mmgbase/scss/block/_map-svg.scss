@@ -1,0 +1,90 @@
+#explore-paradise {
+  display:flex;
+  // grid-template-columns:minmax(7%, 1fr) 40% minmax(50vw,70vh) 1fr;
+  // grid-template-areas:". naples-state naples-region naples-region";
+  position:relative;
+  > * {
+    align-self:center;
+  }
+  @media (max-width:$tabletWidth - 1) {
+    flex-direction:column;
+    // grid-template-columns:7% 1fr 7%;
+    // grid-template-areas:". naples-state ." ". naples-region naples-region";
+  }
+}
+
+
+.naples-state-map-wrapper {
+  // grid-area:naples-state;
+  padding:40px 0;
+  margin-left: 7%;
+  p{max-width:500px}
+  @media (max-width: $desktopWidth - 1) {
+    margin-left: 15px;
+    margin-right: 15px;
+    h2 {
+      font-size:30px;
+    }
+    p {
+      font-size:18px;
+    }
+  }
+  @media (max-width: $desktopWidth - 1) and (min-width:$tabletWidth) {
+    padding:20px 0;
+  }
+  @media (max-width: $tabletWidth - 1) {
+    padding:50px 0;
+  }
+}
+
+.naples-state-map {
+  max-width: 250px; margin: 0 auto;
+  .st0{fill:#104F63;}
+  .st1{clip-path:url(#SVGID_2_);fill:#FFFFFF;}
+  .st2{clip-path:url(#SVGID_4_);fill-rule:evenodd;clip-rule:evenodd;fill:#FFFFFF;}
+  .st3{clip-path:url(#SVGID_6_);fill-rule:evenodd;clip-rule:evenodd;fill:#FFFFFF;}
+  .st5{font-size:12px;}
+  .st6{font-size:12px;}
+  @media (min-width: $tabletWidth) and (max-width: 850px) {
+    max-width: 200px;
+  }
+}
+
+.naples-region-map {
+  // grid-area: naples-region;
+  max-width:110%;
+  height: 100%;
+  position: absolute;
+  top:0;
+  right:0;
+  .st0{fill:shade($coastal-aqua-menu,5%);}
+  .st1{fill:#DFDFDF;}
+  .st2{fill:$dark-blue;}
+  .st6{fill:$calico-coral;}
+  a {
+    display: block;
+    text-decoration:none;
+    &:hover, &:active, &:focus {
+      text, path {
+        fill: $calico-coral;
+      }
+    }
+
+  }
+  text, path {
+    font-size: 24px;
+    transition:fill 250ms ease-in-out;
+    fill: $dark-blue;
+    color:#104f6366
+  }
+
+  @media (max-width: $tabletWidth - 1) {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+  @media (max-width: 480px) {
+    a { font-size: 26px; }
+  }
+}

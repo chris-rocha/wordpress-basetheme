@@ -1,0 +1,41 @@
+.paragraph.download-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex: 0 0 48%;
+  background-color: $gulf-blue;
+  padding: 10px 12px;
+  margin: 0 1% 2%;
+  .heading6 {
+    color: white;
+  }
+  svg.icon-svg {
+    transition: transform 250ms ease-in-out;
+    height: 40px;
+    width: 40px;
+    .cls-1 {fill: $light-green;} // #1d8fb3
+    .cls-2 {fill: white;} // #8ecaa5
+  }
+}
+.paragraph.download-link, .paragraph.download-link:visited {
+  text-decoration: none !important;
+  transition-property: background-color;
+}
+.paragraph.download-link:hover, .paragraph.download-link:active, .paragraph.download-link:focus {
+  text-decoration: none !important;
+  background-color: $dark-blue;
+  svg.icon-svg {
+    transform: scale(1.2);
+  }
+}
+
+.component.downloads-links {
+  @media screen and (min-width: $tabletWidth) {
+    .link-items {
+      display: flex;
+      flex-flow: wrap;
+      justify-content: center;
+      margin: 0 -1%;
+    }
+  }
+}

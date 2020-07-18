@@ -1,0 +1,66 @@
+// GLOBAL VARIABLES - include your variables here or alter the predefined vars
+
+// Primary
+$warning: red;
+$dkgray: #323232;
+$dark-blue: #104F63;
+$light-green: #8ECBA5;
+//copied from naples site
+$gulf-blue: #1E8FB3;
+$coastal-aqua: #8ED3D1;
+$calico-coral: #E96D63;
+$charcoal: #4B4B4B;
+$light-gray: #AFAFAF;
+$lighter-gray: #F1F1F1;
+$coastal-aqua-menu: #D9F0EF;
+
+$borderWidth: 1px;
+$formBorderWidth: 1px;
+$formFieldWidth: 280px;
+$formBorderColor: $dkgray;
+
+// background vars
+$backgroundColor: white;
+
+// font vars
+$fontSize: 20px; // default font size. Change here will adjust sizes across the board.
+$fontFamily: "proxima-nova", "Proxima Nova", "Open Sans", "Gill Sans MT", "Gill Sans", Corbel, Arial, sans-serif; // default fonts
+$fontColor: $dkgray; // default font color
+// $boldFamily: $fontFamily;
+$fontWeight: normal;
+$boldWeight: 700;
+
+$iconFamily: 'Material Icons';
+
+// link vars
+$linkColor: $gulf-blue; // default link INERT color
+$linkHoverColor: $calico-coral; // default link HOVER color
+$linkDecoration: underline; // default link decoration
+
+// heading vars
+$headingFamily: "Libre Baskerville", "Baskerville", "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif; // default heading font
+$semiBoldWeight: 700;
+$headingColor: $dark-blue;
+
+// form vars
+$formFont: $fontFamily; // default form font
+
+// $heroMaxWidth: 1276px;
+// $componentMaxWidth: 1176px;
+// $horizontalMaxWidth: 900px;
+// $editorialMaxWidth: 740px;
+$headerMaxWidth: 1440px;
+$landingMaxWidth: 1170px;
+$bodyMaxWidth: 760px;
+$mobileMargins: 7%;
+
+// media query dimensions
+// $tenEightyWidth: 1900px;
+// $desktopLgWidth: 1280px;
+$desktopWidth: 960px;
+$tabletWidth: 768px;
+$mobilePortraitWidth: 300px;
+$mobileLandscapeWidth: 565px;
+$mobileMenuPoint: 920px;
+
+$fontSizeChange: 698px;

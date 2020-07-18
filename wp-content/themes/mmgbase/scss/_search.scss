@@ -1,0 +1,41 @@
+.view-content-search {
+  .view-content {
+    > .main {
+      ol {
+        list-style: none;
+        margin-left: 0 !important;
+        li {
+          margin: 0;
+        }
+      }
+    }
+  }
+}
+
+article.node.search-result {
+  padding: $fontSize;
+  background-color: tint($coastal-aqua, 80%);
+  display: flex;
+  margin-bottom: $fontSize;
+  justify-content: space-between;
+
+  p.result {
+    font-size: 18px;
+  }
+
+  figure {
+    order: 2;
+    flex-shrink: 0;
+    margin-left: $fontSize;
+  }
+  @media screen and (max-width: 1024px) {
+    display: block;
+    img {
+      margin: 0 auto $fontSize;
+    }
+    figure {
+      margin: 0;
+    }
+  }
+
+}

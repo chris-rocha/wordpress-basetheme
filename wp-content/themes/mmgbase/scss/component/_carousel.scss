@@ -1,0 +1,151 @@
+$sm-bp: 698px; // wierd BP but thats what they wanted
+$lg-bp: 1440px;
+.component.carousel {
+  .mmg-slider {
+    .slick-slider {
+      position: relative;
+    }
+    .slick-track {
+      display: flex !important;
+    }
+    .slick-slide {
+      height: inherit !important;
+      > div,
+      > div > li,
+      > div > li .card {
+        height: 100%;
+      }
+    }
+  }
+  .cta {
+    // max-height: 0;
+    opacity: 0;
+  }
+  .icon-svg {
+    .cls-1,
+    .cls-2 {
+      transition: all 300ms ease;
+    }
+  }
+  .slick-current,
+  .slick-slide:hover {
+    .card {
+      background-color: $gulf-blue;
+      .icon-svg .cls-2 {
+        fill: white;
+      }
+      .heading {
+        color: white;
+      }
+      .cta {
+        // max-height: 100%;
+        opacity: 1;
+        transition: all 300ms ease 300ms;
+      }
+    }
+  }
+  .card {
+    transition: background-color 300ms ease;
+    @include boxShadow;
+    border-radius: 7.5px;
+    width: 240px;
+    .icon-svg {
+      height: 76px;
+    }
+    .heading {
+      font-size: 32px;
+      font-family: $fontFamily;
+      margin-bottom: 25px;
+    }
+  }
+  .omega {
+    width: 100%;
+    @media (min-width: $sm-bp) {
+      width: 55%;
+    }
+    @media (min-width: $lg-bp) {
+      width: 75%;
+    }
+    .heading {
+      color: $gulf-blue;
+      // font-size: 24px;
+      // line-height: 30px;
+    }
+    .cta {
+      font-size: 19px;
+      line-height: 17px;
+      font-style: bold;
+    }
+    ul {
+      #content & {
+        list-style: none;
+        padding-left: 0;
+        margin: 0;
+      }
+    }
+  }
+  .alpha {
+    width: 100%;
+    @media (min-width: $sm-bp) {
+      width: 45%;
+    }
+    @media (min-width: $lg-bp) {
+      width: 25%;
+    }
+    .heading {
+      // font-size: 50px;
+      // line-height: 55px;
+      max-width: 750px;
+    }
+    .desc {
+      font-size: 20px;
+      line-height: 30px;
+      max-width: 750px;
+    }
+  }
+  .cards .inner-wrapper {
+    overflow: hidden;
+    display: block;
+    width: 100%;
+    @media (max-width: $sm-bp - 1) {
+      width: 250%;
+      left: 50%;
+      position: relative;
+      transform: translateX(-50%);
+    }
+  }
+  .nav-arrows {
+    @media (max-width: $sm-bp - 1) {
+      text-align: center;
+    }
+  }
+  .slider-arrow {
+    i {
+      font-size: 40px;
+    }
+    width: 60px;
+    height: 60px;
+  }
+  .mmg-slider {
+    max-width: 100%;
+    overflow: hidden;
+    @media (max-width: $sm-bp - 1) {
+      > .flex {
+        flex-direction: column;
+      }
+    }
+    .cell {
+      overflow: visible;
+      &.alpha {
+        @media (max-width: $sm-bp - 1) {
+          padding: 0 $mobileMargins !important;
+        }
+      }
+    }
+  }
+  &.right-side {
+    @media (max-width: $sm-bp - 1) {
+      grid-template-areas: "container container container";
+    }
+  }
+}

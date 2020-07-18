@@ -1,0 +1,115 @@
+footer#footer {
+  .container {
+    .inner-wrapper .cell {
+      flex: 1 1 33%;
+    }
+    @media (max-width: $tabletWidth - 1) {
+      .inner-wrapper {
+        &.flex {
+          flex-direction: column;
+        }
+        .cell {
+          flex: 1 1 100%;
+        }
+      }
+      .primary {
+        order: 1;
+      }
+      .secondary {
+        order: 2;
+      }
+      .trinary {
+        order: 0;
+      }
+    }
+  }
+  ul {
+    &.menu {
+      margin-top: 50px;
+    }
+    @media (max-width: $tabletWidth - 1) {
+      margin-top: 0px;
+      margin-bottom: 0px;
+      &.menu {
+        margin-top: 0px;
+        margin-bottom: 0px;
+      }
+    }
+
+    li.menu-item {
+      margin-bottom: 5px;
+      a {
+        text-transform: uppercase;
+        text-decoration: none;
+      }
+    }
+  }
+  .address {
+    text-decoration: none;
+  }
+  .phone {
+  }
+  a {
+    font-weight: 600;
+    font-size: 18px;
+    color: shade($gulf-blue, 20%);
+    &:hover,
+    &:active,
+    &:focus {
+      text-decoration: underline !important;
+      color: $linkHoverColor;
+    }
+  }
+  .social {
+    a {
+      width: 25px;
+      height: 25px;
+      padding: 4px;
+      margin: 5px;
+      border: 1px solid;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+  .trinary .material-icons {
+    margin-right: 0.25em;
+    vertical-align: middle;
+  }
+  .logo {
+    @include set-max-width(130px);
+  }
+  img.darksky {
+    width: 70px;
+  }
+  .partners {
+    margin: 0;
+    text-align: center;
+    li {
+      display: inline-block;
+      vertical-align: middle;
+      margin: 0 15px 20px;
+
+      @media screen and (max-width: 375px) {
+        display: block;
+      }
+    }
+    img {
+      transition: all 300ms ease;
+      max-width: 180px;
+      max-height: 80px;
+      margin: auto;
+    }
+    a {
+      display: block;
+      &:hover,
+      &:active,
+      &:focus {
+        img {
+          transform: scale(1.1);
+        }
+      }
+    }
+  }
+}

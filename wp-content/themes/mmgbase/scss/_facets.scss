@@ -1,0 +1,60 @@
+.facet-empty {
+  display: none;
+}
+
+.facets-widget-checkbox {
+  border: 1px solid $light-gray;
+  padding: $fontSize;
+  margin-bottom: $fontSize;
+
+  button {
+    color: $gulf-blue;
+    text-transform: uppercase;
+    display: block;
+    width: 100%;
+    text-align: left;
+    font-size: 16px;
+    position: relative;
+    padding-right: 1.2em;
+    &:after {
+      content: "\e315";
+      font-family: $iconFamily;
+      position: absolute;
+      right: 0;
+      top: -4px;
+      font-size: 24px;
+      transition: transform 125ms ease-in-out;
+    }
+  }
+  ul {
+    list-style: none !important;
+    margin-left: 0 !important;
+    margin-bottom: 0;
+    overflow: hidden;
+    max-height: 0;
+    transition: all 250ms ease-in-out;
+    li.facet-item {
+      display: flex;
+      align-items: center;
+      label {
+        margin: 0;
+        font-family: $fontFamily;
+        font-weight: normal;
+        font-size: 16px;
+      }
+    }
+  }
+  &.open {
+    ul {
+      max-height: 300px;
+      overflow-y: auto;
+      overflow-x: hidden;
+      padding-top: $fontSize;
+    }
+    button {
+      &:after {
+        transform: rotate(90deg);
+      }
+    }
+  }
+}
