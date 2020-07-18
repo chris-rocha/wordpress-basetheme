@@ -2,6 +2,7 @@
 
 require get_template_directory() . '/inc/setup.php';
 require get_template_directory() . '/components/hero-component.php';
+require get_template_directory() . '/components/single-promo.php';
 
 /**
  * Enqueue scripts and styles.
@@ -16,7 +17,6 @@ function mmgbase_scripts() {
 	wp_enqueue_style('typekit');
 
 	// wp_enqueue_style( 'twentynineteen-print-style', get_template_directory_uri() . '/print.css', array(), wp_get_theme()->get( 'Version' ), 'print' );
-
 
 	wp_register_script('cookie-js', get_template_directory_uri() . '/js/cookieconsent.min.js', array('jquery'), null, true);
 	wp_enqueue_script('cookie-js');

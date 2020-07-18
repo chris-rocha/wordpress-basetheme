@@ -4,7 +4,8 @@ function wrap_component_blocks( $block_content, $block ) {
 	$no_wrap = array(
 		null,
 		'acf/hero-component',
-		'acf/side-by-side'
+		'acf/single-promo',
+		'core/button'
 	);
 
 	if(!in_array($block['blockName'], $no_wrap)) {
