@@ -1,6 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import gdpr from "./gdpr.js";
-var Drupal = {};
+var Drupal = typeof(Drupal) == 'undefined' ? {} : Drupal;
+
 (function ($, Drupal) {
   $.fn.extend({
     toggleText: function(a, b){

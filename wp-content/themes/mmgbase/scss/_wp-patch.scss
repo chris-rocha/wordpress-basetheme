@@ -26,7 +26,7 @@
 }
 
 @media(max-width: $mobileMenuPoint) {
-	#menu-item-46 {
+	header#header #main-menu ul.menu.main li:nth-child(3) {
 		display: none;
 	}
 }

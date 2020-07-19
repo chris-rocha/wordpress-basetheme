@@ -1825,4 +1825,4 @@ article.node.search-result figure { -webkit-box-ordinal-group: 3; -moz-box-ordin
 
 .menu-item a img { max-height: 90px !important; margin-bottom: 6px !important; }
 
-@media (max-width: 920px) { #menu-item-46 { display: none; } }
+@media (max-width: 920px) { header#header #main-menu ul.menu.main li:nth-child(3) { display: none; } }
