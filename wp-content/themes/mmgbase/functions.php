@@ -3,6 +3,7 @@
 require get_template_directory() . '/inc/setup.php';
 require get_template_directory() . '/components/hero-component.php';
 require get_template_directory() . '/components/single-promo.php';
+require get_template_directory() . '/components/flex-box-promo.php';
 
 /**
  * Enqueue scripts and styles.

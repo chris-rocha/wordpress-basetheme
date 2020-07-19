@@ -134,7 +134,7 @@ Requires PHP: 5.2.4
 
 .bg-repeat::before { content: ""; position: absolute; top: 0; bottom: 0; left: 0; right: 0; background-repeat: repeat; }
 
-.bg-repeat.waves::before { top: 65%; opacity: 0.065; background-size: 200px auto; background-position: 0 0; background-image: url("../images/wave-repeat.png"); }
+.bg-repeat.waves::before { top: 65%; opacity: 0.065; background-size: 200px auto; background-position: 0 0; background-image: url("./images/wave-repeat.png"); }
 
 .bg-image { background-repeat: no-repeat; background-size: cover; background-position: center; }
 
@@ -1191,6 +1191,8 @@ figure.media.rectangle-inline img { margin: auto; }
 
 header#header { background-color: #104F63; position: relative; z-index: 3; }
 
+@media (min-width: 921px) { header#header { min-height: 100px; display: -webkit-box; display: -moz-box; display: -ms-flexbox; display: flex; -webkit-box-align: end; -moz-box-align: end; -ms-flex-align: end; align-items: flex-end; } }
+
 body.path-frontpage header#header { margin-bottom: 0; }
 
 header#header .weather { display: -webkit-box; display: -moz-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -moz-box-align: center; -ms-flex-align: center; align-items: center; }
@@ -1236,7 +1238,7 @@ header#header ul.menu.main li#inline-logo a:after { content: none; }
 
 header#header ul.menu.main .trigger.hide-submenu .material-icons { vertical-align: middle; }
 
-@media (min-width: 921px) { header#header .top-bar { position: absolute; width: 100%; }
+@media (min-width: 921px) { header#header .top-bar { position: absolute; width: 100%; top: 0; left: 0; }
   header#header #inline-logo { padding: 10px 0; }
   header#header #main-menu ul.menu.main { display: -webkit-box; display: -moz-box; display: -ms-flexbox; display: flex; -webkit-box-pack: justify; -moz-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; -webkit-box-align: end; -moz-box-align: end; -ms-flex-align: end; align-items: flex-end; }
   header#header #main-menu ul.menu.main .menu-item-has-children .child, header#header #main-menu ul.menu.main .menu-item--expanded .child { left: 5%; background-color: white; width: 90%; border: 1px solid #323232; border-top: none; }
@@ -1817,3 +1819,5 @@ article.node.search-result figure { -webkit-box-ordinal-group: 3; -moz-box-ordin
 .wp-block-image img { height: auto; display: block; }
 
 .visually-hidden, .screen-reader-text { position: absolute !important; overflow: hidden; clip: rect(1px, 1px, 1px, 1px); width: 1px; height: 1px; word-wrap: normal; }
+
+#main-menu { width: 100%; }

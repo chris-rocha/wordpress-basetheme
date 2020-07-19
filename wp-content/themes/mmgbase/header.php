@@ -28,17 +28,17 @@
         <div class="weather mobile-only"><span class="pe-7w-rain-sun icon"></span><span class="temp">78°&nbsp;F</span></div>
 
         <?php
-          // wp_nav_menu(array(
-          //   'menu_class' => 'menu main',
-          //   'container' => false,
-          //   'theme_location' => 'header-menu',
-          //   'link_before' => '<span class="link-pop">',
-          //   'link_after' => '</span>',
-          //   'walker' => new my_Walker_MegaMenu(),
-          //   'before' => '<div class="link-menu-wrapper">', // no after because of ordering, see walker
-          // ));
+          wp_nav_menu(array(
+            'menu_class' => 'menu main',
+            'container' => false,
+            'theme_location' => 'header-menu',
+            'link_before' => '<span class="link-pop">',
+            'link_after' => '</span>',
+            'walker' => new my_Walker_MegaMenu(),
+            'before' => '<div class="link-menu-wrapper">', // no after because of ordering, see walker
+          ));
         ?>
-<ul class="menu main">
+<!-- <ul class="menu main">
 <li class="menu-item menu-item--expanded">
 <div class="link-menu-wrapper">
 <a href="/why-collier-county" data-drupal-link-system-path="node/21"><span class="link-pop">Why Collier County</span></a>
@@ -226,7 +226,7 @@
 
 </div>
 </li>
-</ul>
+</ul> -->
 
       </div>
     </div>

@@ -129,26 +129,6 @@ if( function_exists('acf_add_local_field_group') ) {
     ));
 }
 
-// function hero_component() {
-
-//   // check function exists
-//   if( function_exists('acf_register_block') ) {
-
-//       // register a hero block
-//       acf_register_block(array(
-//           'name'              => 'hero_component',
-//           'title'             => __('Hero component block'),
-//           'description'       => __('Hero with looping video'),
-//           'render_callback'   => 'component_render_callback',
-//           'category'          => 'formatting',
-//           'icon'              => 'layout',
-//           'mode'              => 'auto',
-//           'keywords'          => array( 'hero', 'block' ),
-//       ));
-//   }
-// }
-// add_action('acf/init', 'hero_component');
-
 if( function_exists('acf_register_block') ) {
   add_action('acf/init', function(){
       acf_register_block(array(
@@ -158,7 +138,7 @@ if( function_exists('acf_register_block') ) {
           'render_callback'   => 'component_render_callback',
           'category'          => 'formatting',
           'icon'              => 'layout',
-          'mode'              => 'auto',
+          'mode'              => 'edit',
           'keywords'          => array( 'hero', 'block' ),
       ));
   });
