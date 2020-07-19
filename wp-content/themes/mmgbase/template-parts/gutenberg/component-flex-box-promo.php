@@ -10,7 +10,7 @@ if( have_rows('field_flex_box_promo_repeater') ):
 
   ?>
 <a class="fill dark-blue custom-promo bg-repeat waves" href="" target="">
-  <?php echo $svg; ?>
+  <?php echo file_get_contents($svg); ?>
   <div class="text-wrapper">
     <h3 class="color white"><?php the_sub_field('field_flex_box_promo_title'); ?></h3>
     <div class="button-wrapper">
