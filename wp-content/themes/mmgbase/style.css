@@ -1258,6 +1258,7 @@ header#header ul.menu.main .trigger.hide-submenu .material-icons { vertical-alig
 
 @media (max-width: 920px) { header#header.open { position: fixed; width: 100%; height: 100%; top: 0; left: 0; z-index: 3; }
   body.adminimal-admin-toolbar.user-logged-in header#header.open { top: 90px; }
+  body.logged-in header#header.open { top: 46px; }
   header#header.open #main-menu { visibility: visible; opacity: 1.0; height: auto; }
   header#header.open #main-menu .weather, header#header.open #main-menu .menu-item--expanded > .link-menu-wrapper > a { -webkit-transition-duration: 350ms; transition-duration: 350ms; opacity: 1; -webkit-transform: scale(1); transform: scale(1); visibility: visible; }
   header#header #main-menu { position: relative; background: white; }
@@ -1823,3 +1824,5 @@ article.node.search-result figure { -webkit-box-ordinal-group: 3; -moz-box-ordin
 #main-menu { width: 100%; }
 
 .menu-item a img { max-height: 90px !important; margin-bottom: 6px !important; }
+
+@media (max-width: 920px) { #menu-item-46 { display: none; } }

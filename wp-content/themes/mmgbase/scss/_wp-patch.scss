@@ -24,3 +24,9 @@
 	max-height: 90px !important;
 	margin-bottom: 6px !important;
 }
+
+@media(max-width: $mobileMenuPoint) {
+	#menu-item-46 {
+		display: none;
+	}
+}

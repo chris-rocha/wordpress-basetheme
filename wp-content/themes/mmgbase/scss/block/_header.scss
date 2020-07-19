@@ -249,6 +249,9 @@ header#header {
       body.adminimal-admin-toolbar.user-logged-in & {
         top: 90px;
       }
+      body.logged-in & {
+        top: 46px;
+      }
 
       #main-menu {
         visibility: visible;
