@@ -11,6 +11,7 @@ function wrap_component_blocks( $block_content, $block ) {
 		null,
 		'acf/hero-component',
 		'acf/single-promo',
+		'acf/flex-box-promo',
 		'core/button'
 	);
 

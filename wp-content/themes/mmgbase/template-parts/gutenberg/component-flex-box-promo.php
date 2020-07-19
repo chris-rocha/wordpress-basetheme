@@ -1,4 +1,5 @@
 <div class="component flexbox-promo">
+  <div class="landing-max-width">
   <div class="container">
 <?php
 if( have_rows('field_flex_box_promo_repeater') ):
@@ -19,6 +20,7 @@ if( have_rows('field_flex_box_promo_repeater') ):
   </div>
 </a>
 <?php endwhile; ?>
+</div>
 </div>
 </div>
 <?php endif; ?>

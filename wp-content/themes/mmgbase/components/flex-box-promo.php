@@ -35,7 +35,7 @@ if( function_exists('acf_add_local_field_group') ) {
     'default_value' => '',
     'min' => 0,
     'max' => 2,
-    'layout' => 'block',
+    'layout' => 'row',
     'button_label' => 'Add another',
     'parent' => 'group_flex_box_promo',
     'sub_fields' => array(
