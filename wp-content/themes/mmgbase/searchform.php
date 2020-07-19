@@ -12,15 +12,15 @@
  * Generate a unique ID for each form and a string containing an aria-label
  * if one was passed to get_search_form() in the args array.
  */
-$twentytwenty_unique_id = twentytwenty_unique_id( 'search-form-' );
+$unique_id = _generate_unique_id( 'search-form-' );
 
-$twentytwenty_aria_label = ! empty( $args['label'] ) ? 'aria-label="' . esc_attr( $args['label'] ) . '"' : '';
+$aria_label = ! empty( $args['label'] ) ? 'aria-label="' . esc_attr( $args['label'] ) . '"' : '';
 ?>
-<form id="collier-search-form" role="search" <?php echo $twentytwenty_aria_label; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaped above. ?> method="get" class="search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>">
-  	<label for="<?php echo esc_attr( $twentytwenty_unique_id ); ?>">
+<form id="collier-search-form" role="search" <?php echo $aria_label; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaped above. ?> method="get" class="search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+  	<label for="<?php echo esc_attr( $unique_id ); ?>">
 		<span class="screen-reader-text"><?php _e( 'Search for:', 'mmgbase' ); // phpcs:ignore: WordPress.Security.EscapeOutput.UnsafePrintingFunction -- core trusts translations ?></span>
     </label>
-    <input type="text" id="<?php echo esc_attr( $twentytwenty_unique_id ); ?>" class="search-field" placeholder="<?php echo esc_attr_x( 'Search', 'placeholder', 'mmgbase' ); ?>" value="<?php echo get_search_query(); ?>" name="s" />
+    <input type="text" id="<?php echo esc_attr( $unique_id ); ?>" class="search-field" placeholder="<?php echo esc_attr_x( 'Search', 'placeholder', 'mmgbase' ); ?>" value="<?php echo get_search_query(); ?>" name="s" />
     <div class="search-button">
       <input type="submit" class="search-submit" value="<?php echo esc_attr_x( 'Search', 'submit button', 'mmgbase' ); ?>" />
     </div>

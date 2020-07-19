@@ -24,15 +24,7 @@ function wrap_component_blocks( $block_content, $block ) {
 }
 add_filter( 'render_block', 'wrap_component_blocks', 10, 3);
 
-// function register_my_menus() {
-//   register_nav_menus(
-//     array(
-//       'header-menu' => __( 'Header Menu' ),
-//       // 'extra-menu' => __( 'Extra Menu' )
-//      )
-//    );
-//  }
- add_action('init', function(){
+add_action('init', function(){
   register_nav_menus(
     array(
       'header-menu' => __( 'Header Menu' ),
