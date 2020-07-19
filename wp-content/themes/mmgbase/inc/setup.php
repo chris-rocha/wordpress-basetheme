@@ -12,7 +12,8 @@ function wrap_component_blocks( $block_content, $block ) {
 		'acf/hero-component',
 		'acf/single-promo',
 		'acf/flex-box-promo',
-		'core/button'
+		'core/button',
+		'core/html'
 	);
 
 	if(!in_array($block['blockName'], $no_wrap)) {
