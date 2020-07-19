@@ -1821,3 +1821,5 @@ article.node.search-result figure { -webkit-box-ordinal-group: 3; -moz-box-ordin
 .visually-hidden, .screen-reader-text { position: absolute !important; overflow: hidden; clip: rect(1px, 1px, 1px, 1px); width: 1px; height: 1px; word-wrap: normal; }
 
 #main-menu { width: 100%; }
+
+.menu-item a img { max-height: 90px !important; margin-bottom: 6px !important; }

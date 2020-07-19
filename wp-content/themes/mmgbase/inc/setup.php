@@ -1,7 +1,7 @@
 <?php
 add_action( 'after_setup_theme', function(){
   add_theme_support( 'post-thumbnails' );
-  add_image_size( 'hero', 1920, 1080, array( 'center', 'center' ));
+	add_image_size( 'hero', 1920, 1080, array( 'center', 'center' ));
 });
 
 
