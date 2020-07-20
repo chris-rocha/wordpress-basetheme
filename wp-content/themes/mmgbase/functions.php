@@ -24,7 +24,7 @@ function component_render_callback( $block ) {
 	}
 }
 
-class Mega_Walker_MegaMenu extends Walker_Nav_Menu{
+class Mega_Walker_MegaMenu extends Walker_Nav_Menu {
 	/**
 	 * @see Walker::start_lvl()
 	 * @since 3.0.0
@@ -37,7 +37,7 @@ class Mega_Walker_MegaMenu extends Walker_Nav_Menu{
 			//$output .= "\n$indent<ul class=\"sub-menu\">\n"; //this is default output;
 
 			//if( $depth==0 ) //'0'==>1st-sub-level; '1'=2nd-sub-level; ....
-			$output .= "\n$indent<div class=\"child\"><div class=\"body-max-width\"><div class=\"container\"><ul class=\"links\">\n";
+			$output .= "\n$indent<span class=\"fill coastal-aqua-20 material-icons show-submenu trigger mobile-only\" tabindex=\"0\">keyboard_arrow_right</span><div class=\"child\"><div class=\"head fill coastal-aqua-20 mobile-only body-max-width\"><div class=\"container\"><ul><li><a href=\"#\" class=\"trigger hide-submenu\"><span class=\"material-icons\">keyboard_arrow_left</span> Back</a></li><li><a href=\"\">Why Collier County</a></li></ul></div></div><div class=\"body-max-width\"><div class=\"container\"><ul class=\"links\">\n";
 	}
 
 	/**
@@ -54,4 +54,18 @@ class Mega_Walker_MegaMenu extends Walker_Nav_Menu{
 			//if( $depth==0 ) //'0'==>1st-sub-level; '1'=2nd-sub-level; ....
 			$output .= "$indent</ul></div></div></div></div>\n"; // extra div here because of 'before' without 'after'
 	}
+
+	public function end_el( &$output, $item, $depth = 0, $args = null ) {
+		if ( isset( $args->item_spacing ) && 'discard' === $args->item_spacing ) {
+			$t = '';
+			$n = '';
+		} else {
+			$t = "\t";
+			$n = "\n";
+		}
+
+			$output .= "</li>{$n}";
+
+	}
+
 }

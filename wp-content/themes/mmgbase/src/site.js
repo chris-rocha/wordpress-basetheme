@@ -24,7 +24,7 @@ var Drupal = typeof(Drupal) == 'undefined' ? {} : Drupal;
 
     $('.trigger','#main-menu').click(function(ev){
       ev.stopPropagation();
-      $(this).closest('.menu-item--expanded').toggleClass('show-submenu');
+      $(this).closest('.menu-item-has-children').toggleClass('show-submenu');
       $(this).closest('.main.menu').toggleClass('has-submenu');
     });
     $('.trigger', '#main-menu').keypress(function(ev){
