@@ -135,7 +135,7 @@ if( function_exists('acf_register_block') ) {
           'name'              => 'hero_component',
           'title'             => __('Hero component block'),
           'description'       => __('Hero with looping video'),
-          'render_callback'   => 'my_acf_block_render_callback',//'component_render_callback',
+          'render_callback'   => 'component_render_callback',
           'category'          => 'formatting',
           'icon'              => 'layout',
           'mode'              => 'edit',
@@ -156,7 +156,13 @@ function my_acf_block_render_callback( $block, $content = '', $is_preview = fals
 
 	wp_register_script('my_js_library', get_template_directory_uri() . '/js/test.js');
 
-	$my_array = ['newkey' => get_field('title')];
+	$my_array = [
+    'title' => get_field('title'),
+    'block' => $block,
+    'content' => $content,
+    'post_id' => $post_id,
+    'video' => get_field('field_hero_component_video')
+  ];
 	wp_localize_script( 'my_js_library', $block['id'], $my_array );
 
 	wp_enqueue_script( 'my_js_library');

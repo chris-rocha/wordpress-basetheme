@@ -137,11 +137,40 @@ if( function_exists('acf_register_block') ) {
           'name'              => 'flex_box_promo',
           'title'             => __('Flex box promo'),
           'description'       => __('limit two promos'),
-          'render_callback'   => 'component_render_callback',
+          'render_callback'   => 'flex_box_render_callback',
           'category'          => 'formatting',
           'icon'              => 'layout',
           'mode'              => 'auto',
           'keywords'          => array( 'flex', 'promo', 'box' ),
       ));
   });
+}
+
+function flex_box_render_callback( $block, $content = '', $is_preview = false, $post_id = 0 ) {
+
+	wp_register_script('my_js_library', get_template_directory_uri() . '/js/test.js');
+
+  $data = [];
+
+  if( have_rows('field_flex_box_promo_repeater') ) {
+    while( have_rows('field_flex_box_promo_repeater') ) {
+      the_row();
+      $data[] = [
+        'title' => get_sub_field('field_flex_box_promo_title'),
+        'icon' => get_sub_field('field_flex_box_promo_icon'),
+        'link' => get_sub_field('field_flex_box_promo_link'),
+      ];
+    }
+  }
+
+  wp_localize_script( 'my_js_library', $block['id'], $data );
+
+	wp_enqueue_script( 'my_js_library');
+
+  ?>
+  <div id="<?php echo esc_attr($block['id']); ?>">
+    <h1>hello</h1>
+    <pre><?php print_r($data); ?></pre>
+  </div>
+  <?php
 }
