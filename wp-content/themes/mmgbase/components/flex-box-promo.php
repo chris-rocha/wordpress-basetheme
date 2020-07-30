@@ -148,8 +148,6 @@ if( function_exists('acf_register_block') ) {
 
 function flex_box_render_callback( $block, $content = '', $is_preview = false, $post_id = 0 ) {
 
-	wp_register_script('my_js_library', get_template_directory_uri() . '/js/test.js');
-
   $data = [];
 
   if( have_rows('field_flex_box_promo_repeater') ) {
@@ -162,10 +160,8 @@ function flex_box_render_callback( $block, $content = '', $is_preview = false, $
       ];
     }
   }
-
-  wp_localize_script( 'my_js_library', $block['id'], $data );
-
-	wp_enqueue_script( 'my_js_library');
+  // attach the data to vue js load
+  wp_localize_script( 'vue-js', $block['id'], $data );
 
   ?>
   <div id="<?php echo esc_attr($block['id']); ?>">
