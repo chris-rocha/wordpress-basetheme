@@ -6,6 +6,7 @@ require get_template_directory() . '/inc/enqueues.php';
 require get_template_directory() . '/components/hero-component.php';
 require get_template_directory() . '/components/single-promo.php';
 require get_template_directory() . '/components/flex-box-promo.php';
+require get_template_directory() . '/components/carousel.php';
 
 function _generate_unique_id( $prefix = '' ) {
 	static $id_counter = 0;

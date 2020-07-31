@@ -24,6 +24,7 @@ function wrap_component_blocks( $block_content, $block ) {
 		'acf/hero-component',
 		'acf/single-promo',
 		'acf/flex-box-promo',
+		'acf/carousel',
 		'core/button',
 		'core/html'
 	);

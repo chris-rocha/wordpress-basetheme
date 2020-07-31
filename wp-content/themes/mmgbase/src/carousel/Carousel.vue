@@ -39,10 +39,10 @@
                     class="heading4 full-width heading text--navy mt-3 mb-2"
                   >{{card.headline}}</div>
                   <a
-                    v-if="card.url"
-                    :href="card.url"
+                    v-if="card.link"
+                    :href="card.link.url"
                     class="button outlined cta"
-                    v-bind="card.link.options.attributes"
+                    v-bind="card.link"
                   >{{card.link.title}}</a>
                 </div>
               </li>
@@ -60,13 +60,14 @@ import Slick from "vue-slick";
 export default {
   name: "CardSlider",
   data() {
+
     return {
       /* eslint-disable no-undef */
       minimumCards: 8,
       smBreakpoint: 698, //this needs to match "this.$mq.sm" dimensions found in carousel.js
-      headline: drupalSettings.asset[this.$root.assetId].heading,
-      summary: drupalSettings.asset[this.$root.assetId].summary,
-      slides: drupalSettings.asset[this.$root.assetId].carouselItems,
+      headline: window[this.$root.assetId].heading,
+      summary: window[this.$root.assetId].summary,
+      slides: window[this.$root.assetId].carouselItems,
       sliderOptions: {
         dots: false,
         arrows: false,

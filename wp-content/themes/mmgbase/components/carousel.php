@@ -1,0 +1,222 @@
+<?php
+if( function_exists('acf_add_local_field_group') ) {
+  acf_add_local_field_group(array(
+    'key' => 'group_carousel',
+    'title' => 'Carousel',
+    'location' => array(
+      array(
+        array(
+          'param' => 'block',
+          'operator' => '==',
+          'value' => 'acf/carousel',
+        ),
+      ),
+    ),
+    'menu_order' => 0,
+    'position' => 'normal',
+    'style' => 'default',
+    'label_placement' => 'top',
+    'instruction_placement' => 'label',
+    'hide_on_screen' => '',
+  ));
+
+    acf_add_local_field(array(
+      'key' => 'field_carousel_heading',
+      'label' => 'Heading',
+      'name' => 'heading',
+      'type' => 'text',
+      'instructions' => '',
+      'required' => 0,
+      'conditional_logic' => 0,
+      'wrapper' => array(
+        'width' => '',
+        'class' => '',
+        'id' => '',
+      ),
+      'default_value' => '',
+      'placeholder' => '',
+      'prepend' => '',
+      'append' => '',
+      'maxlength' => '',
+      'parent' => 'group_carousel',
+    ));
+
+    acf_add_local_field(array(
+      'key' => 'field_carousel_description',
+      'label' => 'Description',
+      'name' => 'description',
+      'type' => 'wysiwyg',
+      'instructions' => '',
+      'required' => 0,
+      'conditional_logic' => 0,
+      'wrapper' => array(
+        'width' => '',
+        'class' => '',
+        'id' => '',
+      ),
+      'default_value' => '',
+      'placeholder' => '',
+      'prepend' => '',
+      'append' => '',
+      'maxlength' => '',
+      'parent' => 'group_carousel',
+      'tabs' => 'all',
+	  	'toolbar' => 'full',
+    	'media_upload' => 0,
+    ));
+
+    acf_add_local_field(array(
+    'key' => 'field_carousel_repeater',
+    'label' => 'Items',
+    'name' => 'items',
+    'type' => 'repeater',
+    'instructions' => '',
+    'required' => 0,
+    'conditional_logic' => 0,
+    'wrapper' => array(
+      'width' => '',
+      'class' => '',
+      'id' => '',
+    ),
+    'default_value' => '',
+    'min' => 0,
+    'max' => 0,
+    'layout' => 'row',
+    'button_label' => 'Add another',
+    'parent' => 'group_carousel',
+    'sub_fields' => array(
+      array(
+        'key' => 'field_carousel_title',
+        'label' => 'Heading',
+        'name' => 'heading',
+        'type' => 'text',
+        'instructions' => '',
+        'required' => 0,
+        'conditional_logic' => 0,
+        'wrapper' => array(
+          'width' => '',
+          'class' => '',
+          'id' => '',
+        ),
+        'default_value' => '',
+        'placeholder' => '',
+        'prepend' => '',
+        'append' => '',
+        'maxlength' => '',
+      ),
+      array(
+        'key' => 'field_carousel_icon',
+        'label' => 'Icon',
+        'name' => 'icon',
+        'type' => 'select',
+        'instructions' => '',
+        'required' => 0,
+        'conditional_logic' => 0,
+        'wrapper' => array(
+          'width' => '',
+          'class' => '',
+          'id' => '',
+        ),
+        'default_value' => '',
+        'choices' => array(
+          'aviation-and-aerospace' => 'Aviation and Aerospace',
+          'cleantech' => 'Cleantech',
+          'contact-us' => 'Contact Us',
+          'defense-and-homeland-security' => 'Defense and Homeland Security',
+          'download' => 'Download',
+          'emerging-technology' => 'Emerging Technology',
+          'events' => 'Events',
+          'expand' => 'Expand',
+          'external-link' => 'External Link',
+          'fast-track' => 'Fast Track',
+          'file-folder' => 'File Folder',
+          'financial-and-professional-services' => 'Financial and Professional Services',
+          'infotech' => 'Infotech',
+          'life-sciences' => 'Life Sciences',
+          'manufacturing' => 'Manufacturing',
+          'map-pin' => 'Map Pin',
+          'news' => 'News',
+          'property-search' => 'Property Search',
+          'services' => 'Services',
+          'settings' => 'Settings',
+          'staff' => 'Staff',
+          'startup' => 'Startup',
+          'submit-a-property' => 'Submit a Property',
+        ),
+        /* (bool) Allow a null (blank) value to be selected. Defaults to 0 */
+        'allow_null' => 0,
+        /* (bool) Allow mulitple choices to be selected. Defaults to 0 */
+        'multiple' => 0,
+        /* (bool) Use the select2 interfacte. Defaults to 0 */
+        'ui' => 0,
+        /* (bool) Load choices via AJAX. The ui setting must also be true for this to work. Defaults to 0 */
+        'ajax' => 0,
+        /* (string) Appears within the select2 input. Defaults to '' */
+        'placeholder' => '',
+      ),
+      array(
+        'key' => 'field_carousel_link',
+        'label' => 'Link',
+        'name' => 'link',
+        'type' => 'link',
+        'instructions' => '',
+        'required' => 0,
+        'conditional_logic' => 0,
+        'wrapper' => array(
+          'width' => '',
+          'class' => '',
+          'id' => '',
+        ),
+        'default_value' => '',
+        'placeholder' => '',
+        'prepend' => '',
+        'append' => '',
+        'maxlength' => '',
+      ),
+    ),
+  ));
+}
+
+if( function_exists('acf_register_block') ) {
+  add_action('acf/init', function(){
+      acf_register_block(array(
+          'name'              => 'carousel',
+          'title'             => __('Carousel'),
+          'description'       => __('at least four items'),
+          'render_callback'   => 'carousel_render_callback',
+          'category'          => 'formatting',
+          'icon'              => 'layout',
+          'mode'              => 'auto',
+          'keywords'          => array( 'carousel', 'slider' ),
+          'enqueue_script' => get_template_directory_uri() . '/js/carousel.bundle.js',
+        ));
+  });
+}
+
+function carousel_render_callback($block) {
+  $data = [];
+
+  $data['heading'] = get_field('field_carousel_heading');
+  $data['summary'] = get_field('field_carousel_description');
+
+  if( have_rows('field_carousel_repeater') ) {
+    while( have_rows('field_carousel_repeater') ) {
+      the_row();
+      $data['carouselItems'][] = [
+        'headline' => get_sub_field('field_carousel_title'),
+        //'icon' => get_sub_field('field_carousel_icon'),
+        'icon' => file_get_contents(get_stylesheet_directory_uri() . '/images/icons/' . get_sub_field('field_carousel_icon') . '.svg'),
+        'link' => get_sub_field('field_carousel_link'),
+      ];
+    }
+  }
+  // attach the data to vue js load
+  wp_localize_script( 'vue-js', $block['id'], $data );
+  ?>
+  <div class="component carousel right-side landing-max-width" data-asset-id="<?php echo esc_attr($block['id']); ?>">
+    <div class="container">
+    <carousel />
+    </div>
+  </div>
+  <?php
+}
