@@ -186,7 +186,7 @@ if( function_exists('acf_register_block') ) {
           'render_callback'   => 'carousel_render_callback',
           'category'          => 'formatting',
           'icon'              => 'layout',
-          'mode'              => 'auto',
+          'mode'              => 'edit',
           'keywords'          => array( 'carousel', 'slider' ),
           'enqueue_script' => get_template_directory_uri() . '/js/carousel.bundle.js',
         ));
