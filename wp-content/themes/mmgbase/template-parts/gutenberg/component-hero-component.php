@@ -7,7 +7,7 @@
   $image = get_field('image');
 ?>
 <section class="hero landing has-media has-video">
-  <div class="video-wrapper">
+  <div class="video-wrapper" style="background-repeat: no-repeat; background-size: cover; background-image: url(<?php echo $image['url']; ?>);">
     <video autoplay="autoplay" loop="loop" muted="muted" playsinline="playsinline" width="1920" height="1080">
       <source src="<?php the_field('video'); ?>" type="video/mp4">
     </video>
