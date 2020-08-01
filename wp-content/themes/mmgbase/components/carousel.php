@@ -202,11 +202,12 @@ function carousel_render_callback($block) {
   if( have_rows('field_carousel_repeater') ) {
     while( have_rows('field_carousel_repeater') ) {
       the_row();
+      $link = get_sub_field('field_carousel_link');
       $data['carouselItems'][] = [
         'headline' => get_sub_field('field_carousel_title'),
-        //'icon' => get_sub_field('field_carousel_icon'),
         'icon' => file_get_contents(get_stylesheet_directory_uri() . '/images/icons/' . get_sub_field('field_carousel_icon') . '.svg'),
-        'link' => get_sub_field('field_carousel_link'),
+        'link' => $link,
+        'attributes' => ['target' => $link['target']],
       ];
     }
   }

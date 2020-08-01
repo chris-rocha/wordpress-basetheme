@@ -42,7 +42,7 @@
                     v-if="card.link"
                     :href="card.link.url"
                     class="button outlined cta"
-                    v-bind="card.link"
+                    v-bind="card.attributes"
                   >{{card.link.title}}</a>
                 </div>
               </li>
