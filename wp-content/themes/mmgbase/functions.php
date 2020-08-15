@@ -3,10 +3,10 @@
 require get_template_directory() . '/inc/setup.php';
 require get_template_directory() . '/inc/enqueues.php';
 // components
-require get_template_directory() . '/components/hero-component.php';
-require get_template_directory() . '/components/single-promo.php';
-require get_template_directory() . '/components/flex-box-promo.php';
-require get_template_directory() . '/components/carousel.php';
+// require get_template_directory() . '/components/hero-component.php';
+// require get_template_directory() . '/components/single-promo.php';
+// require get_template_directory() . '/components/flex-box-promo.php';
+// require get_template_directory() . '/components/carousel.php';
 
 function _generate_unique_id( $prefix = '' ) {
 	static $id_counter = 0;
@@ -17,13 +17,13 @@ function _generate_unique_id( $prefix = '' ) {
 }
 
 // component template suggestions
-function component_render_callback( $block ) {
-	$slug = str_replace('acf/', '', $block['name']);
-	// include a template part from within the "template-parts" folder
-	if( file_exists( get_theme_file_path("/template-parts/gutenberg/component-{$slug}.php") ) ) {
-		include( get_theme_file_path("/template-parts/gutenberg/component-{$slug}.php") );
-	}
-}
+// function component_render_callback( $block ) {
+// 	$slug = str_replace('acf/', '', $block['name']);
+// 	// include a template part from within the "template-parts" folder
+// 	if( file_exists( get_theme_file_path("/template-parts/gutenberg/component-{$slug}.php") ) ) {
+// 		include( get_theme_file_path("/template-parts/gutenberg/component-{$slug}.php") );
+// 	}
+// }
 
 class Mega_Walker_MegaMenu extends Walker_Nav_Menu {
 	/**
