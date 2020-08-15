@@ -1,4 +1,5 @@
 <?php
+
 if( function_exists('acf_add_local_field_group') ) {
   acf_add_local_field_group(array(
     'key' => 'group_single_promo',
@@ -96,7 +97,7 @@ if( function_exists('acf_register_block') ) {
           'name'              => 'single_promo',
           'title'             => __('Single Promo'),
           'description'       => __('Optional image'),
-          'render_callback'   => [$this, 'component_render_callback'],
+          'render_callback'   => [ new MilesComponents, 'component_render_callback' ],
           'category'          => 'formatting',
           'icon'              => 'layout',
           'mode'              => 'auto',

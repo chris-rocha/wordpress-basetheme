@@ -25,6 +25,7 @@ if ( ! class_exists( 'MilesComponents' ) ) {
 
 		private static function includes() {
       require_once dirname( __FILE__ ) . '/components/carousel.php';
+      require_once dirname( __FILE__ ) . '/components/single-promo.php';
 		}
 
 		public static function wrap_component_blocks( $block_content, $block ) {
