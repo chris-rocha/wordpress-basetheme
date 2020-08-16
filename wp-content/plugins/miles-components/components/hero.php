@@ -135,7 +135,7 @@ if( function_exists('acf_register_block') ) {
           'name'              => 'hero_component',
           'title'             => __('Hero component block'),
           'description'       => __('Hero with looping video'),
-          'render_callback'   => 'component_render_callback',
+          'render_callback'   => [ new MilesComponents, 'component_render_callback'],
           'category'          => 'formatting',
           'icon'              => 'layout',
           'mode'              => 'edit',

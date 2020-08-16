@@ -23,12 +23,14 @@ if ( ! class_exists( 'MilesComponents' ) ) {
 			self::hooks();
 		}
 
-		private static function includes() {
+    private static function includes() {
       require_once dirname( __FILE__ ) . '/components/carousel.php';
       require_once dirname( __FILE__ ) . '/components/single-promo.php';
+      require_once dirname( __FILE__ ) . '/components/hero.php';
+      require_once dirname( __FILE__ ) . '/components/flex-box-promo.php';
 		}
 
-		public static function wrap_component_blocks( $block_content, $block ) {
+    public static function wrap_component_blocks( $block_content, $block ) {
       $no_wrap = array(
         null,
         'acf/hero-component',
@@ -54,7 +56,7 @@ if ( ! class_exists( 'MilesComponents' ) ) {
       }
     }
 
-		private static function hooks() {
+    private static function hooks() {
       add_action( 'render_block', [ __CLASS__, 'wrap_component_blocks' ], 10, 3 );
     }
 

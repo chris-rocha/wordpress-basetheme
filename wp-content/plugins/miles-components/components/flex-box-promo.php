@@ -1,14 +1,14 @@
 <?php
 if( function_exists('acf_add_local_field_group') ) {
   acf_add_local_field_group(array(
-    'key' => 'group_carousel',
-    'title' => 'Carousel',
+    'key' => 'group_flex_box_promo',
+    'title' => 'Flex box promo',
     'location' => array(
       array(
         array(
           'param' => 'block',
           'operator' => '==',
-          'value' => 'acf/carousel',
+          'value' => 'acf/flex-box-promo',
         ),
       ),
     ),
@@ -19,54 +19,8 @@ if( function_exists('acf_add_local_field_group') ) {
     'instruction_placement' => 'label',
     'hide_on_screen' => '',
   ));
-
     acf_add_local_field(array(
-      'key' => 'field_carousel_heading',
-      'label' => 'Heading',
-      'name' => 'heading',
-      'type' => 'text',
-      'instructions' => '',
-      'required' => 0,
-      'conditional_logic' => 0,
-      'wrapper' => array(
-        'width' => '',
-        'class' => '',
-        'id' => '',
-      ),
-      'default_value' => '',
-      'placeholder' => '',
-      'prepend' => '',
-      'append' => '',
-      'maxlength' => '',
-      'parent' => 'group_carousel',
-    ));
-
-    acf_add_local_field(array(
-      'key' => 'field_carousel_description',
-      'label' => 'Description',
-      'name' => 'description',
-      'type' => 'wysiwyg',
-      'instructions' => '',
-      'required' => 0,
-      'conditional_logic' => 0,
-      'wrapper' => array(
-        'width' => '',
-        'class' => '',
-        'id' => '',
-      ),
-      'default_value' => '',
-      'placeholder' => '',
-      'prepend' => '',
-      'append' => '',
-      'maxlength' => '',
-      'parent' => 'group_carousel',
-      'tabs' => 'all',
-	  	'toolbar' => 'full',
-    	'media_upload' => 0,
-    ));
-
-    acf_add_local_field(array(
-    'key' => 'field_carousel_repeater',
+    'key' => 'field_flex_box_promo_repeater',
     'label' => 'Items',
     'name' => 'items',
     'type' => 'repeater',
@@ -80,13 +34,13 @@ if( function_exists('acf_add_local_field_group') ) {
     ),
     'default_value' => '',
     'min' => 0,
-    'max' => 0,
+    'max' => 2,
     'layout' => 'row',
     'button_label' => 'Add another',
-    'parent' => 'group_carousel',
+    'parent' => 'group_flex_box_promo',
     'sub_fields' => array(
       array(
-        'key' => 'field_carousel_title',
+        'key' => 'field_flex_box_promo_title',
         'label' => 'Heading',
         'name' => 'heading',
         'type' => 'text',
@@ -105,7 +59,7 @@ if( function_exists('acf_add_local_field_group') ) {
         'maxlength' => '',
       ),
       array(
-        'key' => 'field_carousel_icon',
+        'key' => 'field_flex_box_promo_icon',
         'label' => 'Icon',
         'name' => 'icon',
         'type' => 'select',
@@ -155,7 +109,7 @@ if( function_exists('acf_add_local_field_group') ) {
         'placeholder' => '',
       ),
       array(
-        'key' => 'field_carousel_link',
+        'key' => 'field_flex_box_promo_link',
         'label' => 'Link',
         'name' => 'link',
         'type' => 'link',
@@ -180,45 +134,14 @@ if( function_exists('acf_add_local_field_group') ) {
 if( function_exists('acf_register_block') ) {
   add_action('acf/init', function(){
       acf_register_block(array(
-          'name'              => 'carousel',
-          'title'             => __('Carousel'),
-          'description'       => __('at least four items'),
-          'render_callback'   => 'carousel_render_callback',
+          'name'              => 'flex_box_promo',
+          'title'             => __('Flex box promo'),
+          'description'       => __('limit two promos'),
+          'render_callback'   => [ new MilesComponents, 'component_render_callback' ],
           'category'          => 'formatting',
           'icon'              => 'layout',
-          'mode'              => 'edit',
-          'keywords'          => array( 'carousel', 'slider' ),
-          'enqueue_script' => get_template_directory_uri() . '/js/carousel.bundle.js',
-        ));
+          'mode'              => 'auto',
+          'keywords'          => array( 'flex', 'promo', 'box' ),
+      ));
   });
-}
-
-function carousel_render_callback($block) {
-  $data = [];
-
-  $data['heading'] = get_field('field_carousel_heading');
-  $data['summary'] = get_field('field_carousel_description');
-
-  if( have_rows('field_carousel_repeater') ) {
-    while( have_rows('field_carousel_repeater') ) {
-      the_row();
-      $link = get_sub_field('field_carousel_link');
-      $attributes = array_diff_key($link, array_flip(['title', 'url']));
-      $data['carouselItems'][] = [
-        'headline' => get_sub_field('field_carousel_title'),
-        'icon' => file_get_contents(get_stylesheet_directory_uri() . '/images/icons/' . get_sub_field('field_carousel_icon') . '.svg'),
-        'link' => $link,
-        'attributes' => $attributes,
-      ];
-    }
-  }
-  // attach the data to vue js load
-  wp_localize_script( 'vue-js', $block['id'], $data );
-  ?>
-  <div class="component carousel right-side landing-max-width" data-asset-id="<?php echo esc_attr($block['id']); ?>">
-    <div class="container">
-    <carousel />
-    </div>
-  </div>
-  <?php
 }
